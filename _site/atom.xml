@@ -176,6 +176,9 @@
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The final element.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;some-icon&quot;&gt;Some icon:&lt;/h3&gt;
+&lt;p&gt;🚩 Red Flag&lt;/p&gt;
 </description>
         <pubDate>Thu, 05 Jan 2023 00:00:00 +0700</pubDate>
         <link>http://localhost:8000//Sample-Page</link>
@@ -191,7 +194,7 @@
   &lt;li&gt;Mục tiêu&lt;/li&gt;
   &lt;li&gt;Step need to do
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 01&lt;/code&gt; - upgrade ruby 3.1.3: https://mac.install.guide/ruby/13.html&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 01&lt;/code&gt; - Upgrade ruby 3.1.3&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 02&lt;/code&gt; - gem install jekyll&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 03&lt;/code&gt; - create first project từ jekyll&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 04&lt;/code&gt; - add SSH and pull project by SSH : https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux&lt;/li&gt;
@@ -220,22 +223,61 @@ Thử tìm hiểu và bắt tay vào xây dựng trang cá nhân thử xem&lt;/p
 &lt;h2 id=&quot;-what-do-we-need-to-do-&quot;&gt;&lt;a href=&quot;#header-2&quot;&gt;&lt;/a&gt; What do we need to do ?&lt;/h2&gt;
 &lt;p&gt;Sau một hồi đọc vs nghịch thì mình đã đưa blog lên được. Và các step như dưới đây.&lt;/p&gt;
 
-&lt;h4 id=&quot;-prerequisites&quot;&gt;&lt;a href=&quot;#header-4&quot;&gt;&lt;/a&gt; Prerequisites&lt;/h4&gt;
+&lt;h4 id=&quot;-step-0---prerequisites&quot;&gt;&lt;a href=&quot;#header-4&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 0&lt;/code&gt; - Prerequisites&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;github account&lt;/li&gt;
-  &lt;li&gt;MacOS (Vì mình dùng Mac nên mình tổng hợp các step trên Mac, còn các OS khác như Linux, Win,.. thì về cơ bản cũng na ná.)&lt;/li&gt;
+  &lt;li&gt;MacOS (Vì mình dùng Mac nên mình tổng hợp các step trên Mac, còn các OS khác như Linux, Win,.. thì về cơ bản cũng na ná. Bạn đọc tự tìm hiểu)&lt;/li&gt;
   &lt;li&gt;Đã cài Homebrew&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;-step-01---upgrade-ruby-313&quot;&gt;&lt;a href=&quot;#header-4&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 01&lt;/code&gt; - Upgrade ruby 3.1.3&lt;/h4&gt;
+&lt;h4 id=&quot;-step-1---upgrade-ruby-313&quot;&gt;&lt;a href=&quot;#header-4&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 1&lt;/code&gt; - Upgrade ruby 3.1.3&lt;/h4&gt;
 &lt;p&gt;Source: https://mac.install.guide/ruby/13.html&lt;/p&gt;
 
-&lt;h5 id=&quot;check-ruby-version&quot;&gt;Check Ruby version&lt;/h5&gt;
+&lt;h5 id=&quot;check-ruby-version&quot;&gt;&lt;a href=&quot;#header-5&quot;&gt;&lt;/a&gt;Check Ruby version&lt;/h5&gt;
 &lt;p&gt;Run this shell&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which ruby
 /usr/bin/ruby
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
 ruby 2.6.3p62 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2019-04-16 revision 67580&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;....]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;-install-ruby&quot;&gt;&lt;a href=&quot;#header-5&quot;&gt;&lt;/a&gt; Install Ruby&lt;/h5&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;-config-the-shell-environment&quot;&gt;&lt;a href=&quot;#header-5&quot;&gt;&lt;/a&gt; Config the shell environment&lt;/h5&gt;
+&lt;p&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt; file in your text editor.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Setup in the end of file&lt;/p&gt;
+
+&lt;p&gt;On Mac Intel&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Setup $PATH for ruby
+if [ -d &quot;/usr/local/opt/ruby/bin&quot; ]; then
+  export PATH=/usr/local/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;on Mac Silicon:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Setup $PATH for ruby
+if [ -d &quot;/opt/homebrew/opt/ruby/bin&quot; ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Save file.&lt;/p&gt;
+
+&lt;p&gt;🚩 &lt;strong&gt;Note&lt;/strong&gt;: Close and reopen the Terminal window for the changes to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt; file to be recognized&lt;/p&gt;
+
+&lt;h5 id=&quot;-confirm-ruby-installation&quot;&gt;&lt;a href=&quot;#header-5&quot;&gt;&lt;/a&gt; Confirm Ruby installation&lt;/h5&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+ruby 3.1.3p185 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2022-11-24 revision 1a6b16756e&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;arm64-darwin20]
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+/opt/homebrew/lib/ruby/gems/3.1.0/bin:/opt/homebrew/opt/ruby/bin:/Users/anryseig/opt/anaconda3/bin:/Users/anryseig/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 </description>
