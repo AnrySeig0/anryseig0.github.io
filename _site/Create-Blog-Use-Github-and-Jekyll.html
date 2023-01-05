@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Create Blog use Github and Jekyll on MacOS</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Create Blog use Github and Jekyll on MacOS | Hacker-Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Create Blog use Github and Jekyll on MacOS" />
+<meta name="author" content="TruongNV Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mục lục" />
+<meta property="og:description" content="Mục lục" />
+<link rel="canonical" href="http://localhost:8000/Create-Blog-Use-Github-and-Jekyll" />
+<meta property="og:url" content="http://localhost:8000/Create-Blog-Use-Github-and-Jekyll" />
+<meta property="og:site_name" content="Hacker-Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-05T00:00:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Create Blog use Github and Jekyll on MacOS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"TruongNV Blog","url":"https://anryseig0.github.io/archive"},"dateModified":"2023-01-05T00:00:00+07:00","datePublished":"2023-01-05T00:00:00+07:00","description":"Mục lục","headline":"Create Blog use Github and Jekyll on MacOS","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:8000/Create-Blog-Use-Github-and-Jekyll"},"url":"http://localhost:8000/Create-Blog-Use-Github-and-Jekyll"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>truongnv@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Create Blog use Github and Jekyll on MacOS</h2>
+  <time datetime="2023-01-05T00:00:00+07:00" class="by-line">05 Jan 2023</time>
+  <h1 id="-mục-lục"><a href="#header-1"></a> Mục lục</h1>
+
+<ol>
+  <li>Mục tiêu</li>
+  <li>Step need to do
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Step 01</code> - upgrade ruby 3.1.3: https://mac.install.guide/ruby/13.html</li>
+      <li><code class="language-plaintext highlighter-rouge">Step 02</code> - gem install jekyll</li>
+      <li><code class="language-plaintext highlighter-rouge">Step 03</code> - create first project từ jekyll</li>
+      <li><code class="language-plaintext highlighter-rouge">Step 04</code> - add SSH and pull project by SSH : https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux</li>
+      <li><code class="language-plaintext highlighter-rouge">Step 05</code> - setup public Page in github: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site</li>
+      <li><code class="language-plaintext highlighter-rouge">Step 06</code> - remove repository name in github link: https://stackoverflow.com/questions/44531269/is-there-a-way-to-remove-repository-name-from-github-page-link</li>
+      <li><code class="language-plaintext highlighter-rouge">Step 07</code> - pick a theme in: https://jamstackthemes.dev/ssg/jekyll/page/4/</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-mục-tiêu"><a href="#header-2"></a> Mục tiêu</h2>
+<p>Gần cuối năm, mình có khá nhiều thời gian để đọc và tìm hiểu. Nhưng vấn đề nảy sinh là
+:</p>
+<ol>
+  <li>Mình đọc khá nhiều nhưng cũng quên khá nhiều</li>
+  <li>Cần một nơi tổng hợp lại những thứ mình đã bỏ công để tìm hiểu, tiết kiệm thời gian tìm tòi và vọc</li>
+  <li>Một vài người thân cũng cần nền tảng nào đó để viết blog cho chính họ</li>
+</ol>
+
+<blockquote>
+  <p>A há, mình có ý tưởng này. Github hỗ trợ blog cá nhân khá ngon thấy nhiều người cũng dùng.
+Thử tìm hiểu và bắt tay vào xây dựng trang cá nhân thử xem</p>
+
+</blockquote>
+
+<h2 id="-what-do-we-need-to-do-"><a href="#header-2"></a> What do we need to do ?</h2>
+<p>Sau một hồi đọc vs nghịch thì mình đã đưa blog lên được. Và các step như dưới đây.</p>
+
+<h4 id="-prerequisites"><a href="#header-4"></a> Prerequisites</h4>
+<ul>
+  <li>github account</li>
+  <li>MacOS (Vì mình dùng Mac nên mình tổng hợp các step trên Mac, còn các OS khác như Linux, Win,.. thì về cơ bản cũng na ná.)</li>
+  <li>Đã cài Homebrew</li>
+</ul>
+
+<h4 id="-step-01---upgrade-ruby-313"><a href="#header-4"></a> <code class="language-plaintext highlighter-rouge">Step 01</code> - Upgrade ruby 3.1.3</h4>
+<p>Source: https://mac.install.guide/ruby/13.html</p>
+
+<h5 id="check-ruby-version">Check Ruby version</h5>
+<p>Run this shell</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>which ruby
+/usr/bin/ruby
+<span class="nv">$ </span>ruby <span class="nt">-v</span>
+ruby 2.6.3p62 <span class="o">(</span>2019-04-16 revision 67580<span class="o">)</span> <span class="o">[</span>....]
+</code></pre></div></div>
+
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>truongnv</b>
+    </span>
+    
+    <span>© 2023</span>
+  </a>
+</footer>
+
+  
+</body>
+
+</html>
