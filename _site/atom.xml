@@ -194,13 +194,13 @@
   &lt;li&gt;Mục tiêu&lt;/li&gt;
   &lt;li&gt;Step need to do
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 01&lt;/code&gt; - Upgrade ruby 3.1.3&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 02&lt;/code&gt; - gem install jekyll&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 03&lt;/code&gt; - create first project từ jekyll&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 04&lt;/code&gt; - add SSH and pull project by SSH : https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 05&lt;/code&gt; - setup public Page in github: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 06&lt;/code&gt; - remove repository name in github link: https://stackoverflow.com/questions/44531269/is-there-a-way-to-remove-repository-name-from-github-page-link&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 07&lt;/code&gt; - pick a theme in: https://jamstackthemes.dev/ssg/jekyll/page/4/&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 1&lt;/code&gt; - Upgrade ruby 3.1.3&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 2&lt;/code&gt; - gem install jekyll&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 3&lt;/code&gt; - create first project từ jekyll&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 4&lt;/code&gt; - pick a theme in: https://jamstackthemes.dev/ssg/jekyll/page/4/&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 5&lt;/code&gt; - add SSH and pull project by SSH : https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 6&lt;/code&gt; - setup public Page in github: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 7&lt;/code&gt; - remove repository name in github link: https://stackoverflow.com/questions/44531269/is-there-a-way-to-remove-repository-name-from-github-page-link&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -223,14 +223,14 @@ Thử tìm hiểu và bắt tay vào xây dựng trang cá nhân thử xem&lt;/p
 &lt;h2 id=&quot;-what-do-we-need-to-do-&quot;&gt;&lt;a href=&quot;#header-2&quot;&gt;&lt;/a&gt; What do we need to do ?&lt;/h2&gt;
 &lt;p&gt;Sau một hồi đọc vs nghịch thì mình đã đưa blog lên được. Và các step như dưới đây.&lt;/p&gt;
 
-&lt;h4 id=&quot;-step-0---prerequisites&quot;&gt;&lt;a href=&quot;#header-4&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 0&lt;/code&gt; - Prerequisites&lt;/h4&gt;
+&lt;h3 id=&quot;-step-0---prerequisites&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 0&lt;/code&gt; - Prerequisites&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;github account&lt;/li&gt;
   &lt;li&gt;MacOS (Vì mình dùng Mac nên mình tổng hợp các step trên Mac, còn các OS khác như Linux, Win,.. thì về cơ bản cũng na ná. Bạn đọc tự tìm hiểu)&lt;/li&gt;
   &lt;li&gt;Đã cài Homebrew&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;-step-1---upgrade-ruby-313&quot;&gt;&lt;a href=&quot;#header-4&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 1&lt;/code&gt; - Upgrade ruby 3.1.3&lt;/h4&gt;
+&lt;h3 id=&quot;-step-1---upgrade-ruby-313&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 1&lt;/code&gt; - Upgrade ruby 3.1.3&lt;/h3&gt;
 &lt;p&gt;Source: https://mac.install.guide/ruby/13.html&lt;/p&gt;
 
 &lt;h5 id=&quot;check-ruby-version&quot;&gt;&lt;a href=&quot;#header-5&quot;&gt;&lt;/a&gt;Check Ruby version&lt;/h5&gt;
@@ -280,6 +280,62 @@ ruby 3.1.3p185 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2022-11-24 revision
 /opt/homebrew/lib/ruby/gems/3.1.0/bin:/opt/homebrew/opt/ruby/bin:/Users/anryseig/opt/anaconda3/bin:/Users/anryseig/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;-step-2---gem-install-jekyll&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 2&lt;/code&gt; - gem install jekyll&lt;/h3&gt;
+&lt;h3 id=&quot;-step-3---create-first-project-từ-jekyll&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 3&lt;/code&gt; - create first project từ jekyll&lt;/h3&gt;
+&lt;p&gt;Về cơ bản thì &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 2&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 3&lt;/code&gt;  follow DOC của &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;https://jekyllrb.com/docs/&lt;/a&gt;
+để install và run thử một project tạo từ jekyll.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new myblog
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myblog
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+....
+    Server address: http://127.0.0.1:4000/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Vô link server trên và bạn đã access vào blog của bạn.
+Chúc mừng, bạn đã thành công khởi tạo blog cá nhân của bạn ở môi trường local.&lt;/p&gt;
+
+&lt;h3 id=&quot;-step-4---pick-a-theme&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 4&lt;/code&gt; - Pick a theme&lt;/h3&gt;
+&lt;p&gt;Để rút gọn thời gian và tập trung vào việc đưa trang blog cá nhân của bạn vào luồng chạy,
+hãy chọn một theme thích hợp với bạn ở đây: &lt;a href=&quot;https://jamstackthemes.dev/ssg/jekyll/&quot;&gt;https://jamstackthemes.dev/ssg/jekyll/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pull theme mà bạn chọn và đọc qua cách sử dụng theme đó.&lt;/p&gt;
+
+&lt;p&gt;🚩 &lt;strong&gt;Note&lt;/strong&gt;: Tới đây thì về cơ bản bạn đã tạo được môi trường để có thể chạy jekyll project.
+Vấn đề tiếp theo là triển khai project từ máy của bạn lên môi trường Internet.
+Ở đây chúng ta lựa chọn nền tảng github để triển khai blog của mình.&lt;/p&gt;
+
+&lt;h3 id=&quot;-step-5---add-ssh-and-pull-project-by-ssh&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 5&lt;/code&gt; - Add SSH and pull project by SSH&lt;/h3&gt;
+
+&lt;p&gt;Github thay đổi security policy và bắt chúng ta pull/push project qua ssh.
+Nên bạn cần setup SSH config và pull project với SSH key đó.&lt;/p&gt;
+
+&lt;p&gt;Plz follow the below link:
+&lt;a href=&quot;https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux&quot;&gt;GitHub-SSH-Key-Setup-Config-Ubuntu-Linux&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-step-6---setup-public-page-in-github&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 6&lt;/code&gt; - Setup public Page in github&lt;/h3&gt;
+
+&lt;p&gt;Tới đây thì về cơ bản bạn đã push được project lên github. Github cung cấp cho chúng ta 
+một tính năng để triển khai những đoạn code kia thành trang blog của bạn.
+Github lo tất, triển khai, DNS, ….. etc&lt;/p&gt;
+
+&lt;p&gt;Việc của bạn là tham khảo cấu hình &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Page&lt;/code&gt; của github:
+&lt;a href=&quot;https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&quot;&gt;https://docs.github.com/en/pages/getting-started-with-github-pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-step-7---remove-repository-name-in-github-link&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Step 7&lt;/code&gt; - Remove repository name in github link&lt;/h3&gt;
+&lt;p&gt;Đến đây thì bạn sẽ thấy link blog của bạn có hơi kì kì.
+Kiểu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blogcuatoi.gihub.com/myblog&lt;/code&gt;, cái path trùng với repository name của project của bạn thành mặc định của path đường dẫn.
+Nó hơi kì cục và để pro hơn, bạn nên cấu hình xoá path đó đi, chuyển thành đúng dạng domain &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blogcuatoi.github.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;To remove the repository name, you’ll need to make it a User Page (or an Organization page). 
+Create a repository named myusername.github.io, and commit your content to the master branch&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages&quot;&gt;this help page&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;p&gt;Refer: https://stackoverflow.com/questions/44531269/is-there-a-way-to-remove-repository-name-from-github-page-link&lt;/p&gt;
 </description>
         <pubDate>Thu, 05 Jan 2023 00:00:00 +0700</pubDate>
         <link>http://localhost:8000//Create-Blog-Use-Github-and-Jekyll</link>
