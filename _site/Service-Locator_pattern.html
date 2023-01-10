@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Service Locator Pattern</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Service Locator Pattern | Hacker-Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Service Locator Pattern" />
+<meta name="author" content="TruongNV Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mục lục" />
+<meta property="og:description" content="Mục lục" />
+<link rel="canonical" href="http://localhost:8000/Service-Locator_pattern" />
+<meta property="og:url" content="http://localhost:8000/Service-Locator_pattern" />
+<meta property="og:site_name" content="Hacker-Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-10T00:00:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Service Locator Pattern" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"TruongNV Blog","url":"https://anryseig0.github.io/archive"},"dateModified":"2023-01-10T00:00:00+07:00","datePublished":"2023-01-10T00:00:00+07:00","description":"Mục lục","headline":"Service Locator Pattern","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:8000/Service-Locator_pattern"},"url":"http://localhost:8000/Service-Locator_pattern"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>truongnv@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Service Locator Pattern</h2>
+  <time datetime="2023-01-10T00:00:00+07:00" class="by-line">10 Jan 2023</time>
+  <h1 id="-mục-lục"><a href="#header-1"></a> Mục lục</h1>
+
+<ol>
+  <li>Service Locator Pattern là gì ?</li>
+  <li>Cài đặt Service Locator như thế nào ?</li>
+  <li>Code</li>
+  <li>Ưu điểm vs nhược điểm ?</li>
+  <li>Use case điển hình.</li>
+</ol>
+
+<h1 id="-service-locator-pattern-là-gì-"><a href="#header-1"></a> Service Locator Pattern là gì ?</h1>
+<p><code class="language-plaintext highlighter-rouge">Service Locator</code> là một pattern cho phép client có thể định vị những
+<strong>service</strong> mà nó sử dụng. Bằng cách tách rời mối liên hết giữa class với 
+các dependencies (hay gọi là services) của nó thông qua việc chen vào giữa 
+mối liên kết một đối tượng trung gian là <code class="language-plaintext highlighter-rouge">Service Locator</code></p>
+
+<p><img src="../assets/2023_01/service-locator-01.png" alt="image" /></p>
+
+<p>🚩 Thông thường thì <code class="language-plaintext highlighter-rouge">Service Locator Pattern</code> được kết hợp với <code class="language-plaintext highlighter-rouge">Factory Pattern</code>
+hoặc <code class="language-plaintext highlighter-rouge">Dependency Injection Pattern</code> để có thể tạo ra các instance của service</p>
+
+<h1 id="-cài-đặt-service-locator-như-thế-nào"><a href="#header-1"></a> Cài đặt Service Locator như thế nào?</h1>
+
+<p>Class Diagram</p>
+
+<p><img src="../assets/2023_01/service-locator-02.png" alt="image" /></p>
+
+<p>Với diagram như trên ta có thể hiểu flow để setup một <code class="language-plaintext highlighter-rouge">Service Locator</code> như sau:</p>
+<ol>
+  <li>Client thực hiện nghiệp vụ và gọi vào <code class="language-plaintext highlighter-rouge">ServiceLocator</code> để lấy service cần dùng (hay dependency cần dùng)</li>
+  <li><code class="language-plaintext highlighter-rouge">ServiceLocator</code> check trong <code class="language-plaintext highlighter-rouge">Cache</code> xem service đó đã có trong <code class="language-plaintext highlighter-rouge">Cache</code> chưa ?</li>
+  <li>Nếu có thì trả về service cần dùng.</li>
+  <li>Nếu không thì tiếp tục:
+    <ul>
+      <li>Gọi vào <code class="language-plaintext highlighter-rouge">InitialContext</code> để khởi tạo service</li>
+      <li><code class="language-plaintext highlighter-rouge">InitialContext</code> thông quan interface <code class="language-plaintext highlighter-rouge">Service</code> để lấy instance của <code class="language-plaintext highlighter-rouge">ServiceImpl</code> theo các thông số</li>
+      <li>Trả về service instance cho <code class="language-plaintext highlighter-rouge">ServiceLocator</code></li>
+      <li>Và song song đó, cache lại service trong <code class="language-plaintext highlighter-rouge">Cache</code></li>
+    </ul>
+  </li>
+</ol>
+
+<p>🚩 <strong>Note</strong> : <code class="language-plaintext highlighter-rouge">ServiceLocator</code> luôn là Singleton , tránh racing condition.</p>
+
+<h1 id="-code"><a href="#header-1"></a> CODE</h1>
+<p>Code on <a href="https://github.com/AnrySeig0/java-design-pattern/tree/master/service-locator">GitHub</a></p>
+
+<p>Đầu tiên ta khởi tạo một interface <code class="language-plaintext highlighter-rouge">Service</code> và <code class="language-plaintext highlighter-rouge">ServiceImpl</code>.
+Trong <code class="language-plaintext highlighter-rouge">ServiceImpl</code>, inject 2 thông số là <code class="language-plaintext highlighter-rouge">serviceName</code> và <code class="language-plaintext highlighter-rouge">id</code></p>
+
+<p>Interface <code class="language-plaintext highlighter-rouge">Service.java</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Service.java</span>
+<span class="c1">// [Interface]</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Service</span> <span class="o">{</span>
+  <span class="c1">// the human-readable name of the service</span>
+  <span class="nc">String</span> <span class="nf">getName</span><span class="o">();</span>
+
+  <span class="c1">// UniqueID of the particular service</span>
+  <span class="kt">int</span> <span class="nf">getId</span><span class="o">();</span>
+
+  <span class="c1">// The workflow method that defines what this service does</span>
+  <span class="kt">void</span> <span class="nf">execute</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Class <code class="language-plaintext highlighter-rouge">ServiceImpl.java</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ServiceImpl.java</span>
+<span class="c1">// [Class]</span>
+<span class="kn">import</span> <span class="nn">lombok.extern.slf4j.Slf4j</span><span class="o">;</span>
+
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServiceImpl</span> <span class="kd">implements</span> <span class="nc">Service</span><span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">serviceName</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+
+  <span class="c1">// Constructor</span>
+  <span class="kd">public</span> <span class="nf">ServiceImpl</span><span class="o">(</span><span class="nc">String</span> <span class="n">serviceName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">serviceName</span> <span class="o">=</span> <span class="n">serviceName</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="nc">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">serviceName</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Service {} is now executing with id {}"</span><span class="o">,</span> <span class="n">getName</span><span class="o">(),</span> <span class="n">getId</span><span class="o">());</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">ServiceImpl</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ServiceImpl</span><span class="o">(</span><span class="s">"test"</span><span class="o">);</span>
+    <span class="n">a</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Khởi tạo class <code class="language-plaintext highlighter-rouge">InitContext.java</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// InitContext.java</span>
+<span class="c1">// Class</span>
+<span class="kn">import</span> <span class="nn">lombok.extern.slf4j.Slf4j</span><span class="o">;</span>
+
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">InitContext</span> <span class="o">{</span>
+
+  <span class="cm">/**
+   * Perform the lookup based on the service name.
+   * The return object will need to be cast into a {@link Service}
+   *
+   * @param serviceName: a name
+   * @return : an {@link Service}
+   */</span>
+  <span class="kd">public</span> <span class="nc">ServiceImpl</span> <span class="nf">lookup</span><span class="o">(</span><span class="nc">String</span> <span class="n">serviceName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="s">"serviceA"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">serviceName</span><span class="o">))</span> <span class="o">{</span>
+      <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Looking up service A and creating new service for A"</span><span class="o">);</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nf">ServiceImpl</span><span class="o">(</span><span class="s">"serviceA"</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="s">"serviceB"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">serviceName</span><span class="o">))</span> <span class="o">{</span>
+      <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Looking up service B and creating new service for B"</span><span class="o">);</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nf">ServiceImpl</span><span class="o">(</span><span class="s">"serviceB"</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">ServiceCache.java</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ServiceCache.java</span>
+<span class="c1">// Class</span>
+<span class="kn">import</span> <span class="nn">lombok.extern.slf4j.Slf4j</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.var</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServiceCache</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Service</span><span class="o">&gt;</span> <span class="n">serviceCache</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">ServiceCache</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">serviceCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+  <span class="o">}</span>
+
+  <span class="cm">/**
+   * Get the service from cache. null if no service is found matching the name
+   *
+   * @param serviceName: a string
+   * @return {@link Service}
+   */</span>
+  <span class="kd">public</span> <span class="nc">Service</span> <span class="nf">getService</span><span class="o">(</span><span class="nc">String</span> <span class="n">serviceName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">serviceCache</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">serviceName</span><span class="o">))</span> <span class="o">{</span>
+      <span class="kt">var</span> <span class="n">cacheService</span> <span class="o">=</span> <span class="n">serviceCache</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">serviceName</span><span class="o">);</span>
+      <span class="kt">var</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cacheService</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+      <span class="kt">var</span> <span class="n">id</span> <span class="o">=</span> <span class="n">cacheService</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+      <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"(cache call) Fetched service {}({}) from cache ...!"</span><span class="o">,</span> <span class="n">name</span><span class="o">,</span> <span class="n">id</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">cacheService</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="cm">/**
+   * Adds the service into the cache map.
+   *
+   * @param newService: a {@link Service}
+   */</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addService</span><span class="o">(</span><span class="nc">Service</span> <span class="n">newService</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">serviceCache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">newService</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">newService</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Rồi bây giờ kết hợp service và cache lại để có <code class="language-plaintext highlighter-rouge">ServiceLocator.java</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ServiceLocator.java</span>
+<span class="c1">// Class</span>
+<span class="kn">import</span> <span class="nn">lombok.var</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Objects</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServiceLocator</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">ServiceCache</span> <span class="n">serviceCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ServiceCache</span><span class="o">();</span>
+
+  <span class="kd">private</span> <span class="nf">ServiceLocator</span><span class="o">(){}</span>
+
+  <span class="cm">/**
+   * Fetch the service with the name param from the cache first,
+   * if no service is found, lookup the service from the {@link InitContext}
+   * and then add the newly created service into the cache map
+   * for future request
+   *
+   * @param serviceName: astring
+   * @return {@link Service}
+   */</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Service</span> <span class="nf">getService</span><span class="o">(</span><span class="nc">String</span> <span class="n">serviceName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">var</span> <span class="n">serviceObj</span> <span class="o">=</span> <span class="n">serviceCache</span><span class="o">.</span><span class="na">getService</span><span class="o">(</span><span class="n">serviceName</span><span class="o">);</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">isNull</span><span class="o">(</span><span class="n">serviceObj</span><span class="o">))</span> <span class="o">{</span>
+      <span class="cm">/*
+       * If we are unable to retrieve anything from cache, then lookup the service
+       * and add it in the cache map
+       */</span>
+      <span class="kt">var</span> <span class="n">ctx</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InitContext</span><span class="o">();</span>
+      <span class="n">serviceObj</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">lookup</span><span class="o">(</span><span class="n">serviceName</span><span class="o">);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">nonNull</span><span class="o">(</span><span class="n">serviceObj</span><span class="o">))</span> <span class="o">{</span> <span class="c1">// Only cache a service if it actually exists</span>
+        <span class="n">serviceCache</span><span class="o">.</span><span class="na">addService</span><span class="o">(</span><span class="n">serviceObj</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">serviceObj</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Thử nghiệm build một client để chạy thử <code class="language-plaintext highlighter-rouge">App.java</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// App.java</span>
+<span class="c1">// CLass</span>
+<span class="kn">import</span> <span class="nn">lombok.var</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">JNDI_SERVICE_A</span> <span class="o">=</span> <span class="s">"serviceA"</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">JNDI_SERVICE_B</span> <span class="o">=</span> <span class="s">"serviceB"</span><span class="o">;</span>
+
+  <span class="c1">// Program entry point</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">var</span> <span class="n">service</span> <span class="o">=</span> <span class="nc">ServiceLocator</span><span class="o">.</span><span class="na">getService</span><span class="o">(</span><span class="no">JNDI_SERVICE_A</span><span class="o">);</span>
+    <span class="n">service</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+    <span class="n">service</span> <span class="o">=</span> <span class="nc">ServiceLocator</span><span class="o">.</span><span class="na">getService</span><span class="o">(</span><span class="no">JNDI_SERVICE_B</span><span class="o">);</span>
+    <span class="n">service</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+    <span class="n">service</span> <span class="o">=</span> <span class="nc">ServiceLocator</span><span class="o">.</span><span class="na">getService</span><span class="o">(</span><span class="no">JNDI_SERVICE_A</span><span class="o">);</span>
+    <span class="n">service</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+    <span class="n">service</span> <span class="o">=</span> <span class="nc">ServiceLocator</span><span class="o">.</span><span class="na">getService</span><span class="o">(</span><span class="no">JNDI_SERVICE_A</span><span class="o">);</span>
+    <span class="n">service</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Run it !!!!!</p>
+
+<p>🚩 <strong>Note</strong> : Rõ ràng ở đây tầng <code class="language-plaintext highlighter-rouge">InitContext</code> chưa được tối ưu, mỗi khi thêm một service X vào system,
+code sẽ phải thay đổi để thêm dịch vụ. CHỗ này các bạn có thể tham khảo cách code <code class="language-plaintext highlighter-rouge">Reflection</code> để tối ưu hơn.</p>
+
+<h1 id="-ưu-điểm-vs-nhược-điểm-"><a href="#header-1"></a> Ưu điểm vs nhược điểm ?</h1>
+
+<p>Ưu điểm:</p>
+<ul>
+  <li>Quản lý tập trung các service thông qua <code class="language-plaintext highlighter-rouge">ServiceLocator</code> duy nhất (Singleton)</li>
+  <li>Ứng dụng chia ra các phần ít bị rằng buộc (loose coupling) với nhau. Dễ code, quản lý hơn.</li>
+  <li>Tách rời class với các dependencies của nó, nhờ đó có thể thay thế các dependency tại thời điểm <code class="language-plaintext highlighter-rouge">run-time</code>
+mà không cần phải <code class="language-plaintext highlighter-rouge">re-compile</code> hay phải restart ứng dụng</li>
+  <li>Dễ test hơn do các class không còn bị phụ thuộc vào dependencies</li>
+</ul>
+
+<p>Nhược điểm:</p>
+<ul>
+  <li>Khó debug hơn, vì các dependencies trở thành hidden đối với class</li>
+  <li><code class="language-plaintext highlighter-rouge">ServiceLocator</code> là duy nhất =&gt; nghẽn cổ chai</li>
+  <li>Có thể sẽ gặp lỗi trên <code class="language-plaintext highlighter-rouge">run-time</code> mà không gặp khi <code class="language-plaintext highlighter-rouge">compile-time</code> do các service bị ẩn đi</li>
+  <li><code class="language-plaintext highlighter-rouge">Service Locator Pattern</code> khó maintain hơn <code class="language-plaintext highlighter-rouge">Dependency Injection Pattern</code>. Do các concrete class vẫn có phụ thuộc vào 
+<code class="language-plaintext highlighter-rouge">ServiceLocator</code>, trong khi đó DI chỉ dọi một lần đê inject các dependencies vào lớp chính.=&gt; DI dễ viết Unit Test hơn.</li>
+</ul>
+
+<h1 id="-use-case"><a href="#header-1"></a> Use Case</h1>
+<ul>
+  <li>Khi cần tách rời một class với các dependencies của nó.</li>
+  <li>Khi cần quản lý tập trung việc khởi tạo các <code class="language-plaintext highlighter-rouge">Service</code></li>
+</ul>
+
+<h1 id="-lời-kết"><a href="#header-1"></a> Lời kết</h1>
+<p><code class="language-plaintext highlighter-rouge">Service Locator</code> là một cách thực hiện IoC Container.
+Khi đọc Spring ta sẽ gặp rất nhiều khái niệm <code class="language-plaintext highlighter-rouge">Dependency Inverrsion</code> trong SOLID, IoC Container, DI container ……
+Các b ài viết sắp tới sẽ viết về các thuật ngữ này.</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>truongnv</b>
+    </span>
+    
+    <span>© 2023</span>
+  </a>
+</footer>
+
+  
+</body>
+
+</html>
