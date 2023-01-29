@@ -32,17 +32,19 @@ title: About
 
 ```java
 class FTECH {
+  /*
+    FTECH is the leading information technology company, applying artificial intelligence in Vietnam
+   */
   public String time = "04/2021- present";
-  public String aboutCompany = "FTECH is the leading information technology company,
-  applying artificial intelligence in Vietnam";
   
-  public Position position(Time, Effort){
-    Map<Time, Position> result = new HashMap<Time, Position>();
-    result.put("03/2022", "Leader position"); // Hold 02 core project is Payment and Fbang
-    result.put("04/2021", "Backend Senior Developer"); // Build Payment GateWay
-    return result;
+  public LeaderPosition execute() {
+    TIME from = "03/2022";
+    Project 
   }
-  
-  
+
+  public BackendSeniorDeveloper execute() {
+    TIME from = "04/2021";
+    Project
+  }
 }
 ```
