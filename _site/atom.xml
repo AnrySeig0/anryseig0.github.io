@@ -12,6 +12,44 @@
     </author>
     
       <item>
+        <title>Some interesting open source project</title>
+        <description>&lt;h1 id=&quot;-mục-lục&quot;&gt;&lt;a href=&quot;#header-1&quot;&gt;&lt;/a&gt; Mục lục&lt;/h1&gt;
+
+&lt;p&gt;Sometime we found some interesting projects, we had dug and enjoy them during a time. 
+But time fly, and we forgot it. So i build this post to note them.&lt;/p&gt;
+
+&lt;h1 id=&quot;-29-01-2023-benfredpy-spy&quot;&gt;&lt;a href=&quot;#header-1&quot;&gt;&lt;/a&gt; [29-01-2023] benfred/py-spy&lt;/h1&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Language&lt;/th&gt;
+        &lt;th&gt;Python3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Type&lt;/th&gt;
+        &lt;th&gt;Analytics&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Link&lt;/th&gt;
+        &lt;th&gt;https://github.com/benfred/py-spy&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;py-spy is a sampling profiler for Python programs. It lets you visualize what your Python program is spending time on without restarting the program or modifying the code in any way. py-spy is extremely low overhead: it is written in Rust for speed and doesn’t run in the same process as the profiled Python program. This means py-spy is safe to use against production Python code.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;py-spy works on Linux, OSX, Windows and FreeBSD, and supports profiling all recent versions of the CPython interpreter (versions 2.3-2.7 and 3.3-3.10).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Sun, 29 Jan 2023 00:00:00 +0700</pubDate>
+        <link>http://localhost:8000//Some-interesting-open-source-project</link>
+        <link href="http://localhost:8000/Some-interesting-open-source-project"/>
+        <guid isPermaLink="true">http://localhost:8000/Some-interesting-open-source-project</guid>
+      </item>
+    
+      <item>
         <title>Service Locator Pattern</title>
         <description>&lt;h1 id=&quot;-mục-lục&quot;&gt;&lt;a href=&quot;#header-1&quot;&gt;&lt;/a&gt; Mục lục&lt;/h1&gt;
 
