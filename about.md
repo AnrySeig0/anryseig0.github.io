@@ -36,7 +36,7 @@ title: About
 
 or check my CV at 
 
-[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1yQm8_xiOudH2SCGCtKTAs3ex3nDQvZhI/view?usp=share_link)
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://docs.google.com/document/d/1yjJkbwGTNemTMeQxwTac3jWt8K99zGLZt6wtSy8J3y4/edit?usp=sharing)
 
 
 
