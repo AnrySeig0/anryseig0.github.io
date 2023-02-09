@@ -102,4 +102,5 @@ class Mobio:
     # NOTE: plz check CV to get detail
 ```
 
-And other companies, plz check CV to get detail.  
+And other companies, plz check CV to get detail.
+[![Google Drive](https://img.shields.io/badge/My%20CV%20on%20Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://docs.google.com/document/d/1yjJkbwGTNemTMeQxwTac3jWt8K99zGLZt6wtSy8J3y4/edit?usp=sharing)
