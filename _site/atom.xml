@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hacker-Blog</title>
-    <description>A Jekyll Blog Theme For Hackers</description>
+    <title>AnrySeig-Blog</title>
+    <description>A Blog For AnrySeig</description>
     <link>http://localhost:8000</link>
     <atom:link href="http://localhost:8000/feed.xml" rel="self" type="application/rss+xml" />
     <author>
@@ -17,6 +17,26 @@
 
 &lt;p&gt;Sometime we found some interesting projects, we had dug and enjoy them during a time. 
 But time fly, and we forgot it. So i build this post to note them.&lt;/p&gt;
+
+&lt;h1 id=&quot;-08-02-2023-shieldsio&quot;&gt;&lt;a href=&quot;#header-1&quot;&gt;&lt;/a&gt; [08-02-2023] shields.io&lt;/h1&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Type&lt;/th&gt;
+        &lt;th&gt;Tool&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Link&lt;/th&gt;
+        &lt;th&gt;https://shields.io/&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tool build mấy cái badge , icon dùng cho web&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Link tổng hợp: https://github.com/Ileriayo/markdown-badges/blob/master/README.md#-artificial-intelligence-and-bots&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h1 id=&quot;-29-01-2023-benfredpy-spy&quot;&gt;&lt;a href=&quot;#header-1&quot;&gt;&lt;/a&gt; [29-01-2023] benfred/py-spy&lt;/h1&gt;
 &lt;table&gt;
@@ -41,7 +61,6 @@ But time fly, and we forgot it. So i build this post to note them.&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;py-spy works on Linux, OSX, Windows and FreeBSD, and supports profiling all recent versions of the CPython interpreter (versions 2.3-2.7 and 3.3-3.10).&lt;/p&gt;
 &lt;/blockquote&gt;
-
 </description>
         <pubDate>Sun, 29 Jan 2023 00:00:00 +0700</pubDate>
         <link>http://localhost:8000//Some-interesting-open-source-project</link>

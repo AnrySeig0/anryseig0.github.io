@@ -36,27 +36,70 @@ title: About
 
 or check my CV at 
 
-[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://docs.google.com/document/d/1yjJkbwGTNemTMeQxwTac3jWt8K99zGLZt6wtSy8J3y4/edit?usp=sharing)
+[![Google Drive](https://img.shields.io/badge/My%20CV%20on%20Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://docs.google.com/document/d/1yjJkbwGTNemTMeQxwTac3jWt8K99zGLZt6wtSy8J3y4/edit?usp=sharing)
 
 
 
 ## [](#header-2) **EXPERIENCE / ACTIVITIES**
 
-```java
-class FTECH {
-  /*
+```python
+class FTECH:
+    """
+    04/2021- present
+    
     FTECH is the leading information technology company, applying artificial intelligence in Vietnam
-   */
-  public String time = "04/2021- present";
-  
-  public LeaderPosition execute() {
-    TIME from = "03/2022";
-    Project 
-  }
-
-  public BackendSeniorDeveloper execute() {
-    TIME from = "04/2021";
-    Project
-  }
-}
+    """
+    Position = [
+        "Technical Leader" # (from Mar 2022),
+        "Backend Senior Developer"
+    ]
+    
+    def tech_stack(self):
+        Languagle = [Python, Java and a litter piece of Go]
+        Databases = [Mongo, MySQL, Redis, ....]
+        Queues = [Kafka, RabbitMQ]
+        CICD = [K8s, OnPremise, Tencent Cloud]
+        Framework = [FastAPI, SpringBoot, Django, Flask, debezium, ....]
+        
+    def responsible_to(company):
+        return [
+            Payment_Gateway_system, # work with MoMo, VNPay, Viettel SMS, Apple + Google IAP ......
+            Fbang_project, # fbang.vn , live stream platform,
+            Jpush, # notification flatform
+            Data_Engineer for AI projects,
+            Internal_CDP
+        ]
+    
+    # NOTE: plz check CV to get detail
 ```
+
+```python
+class Mobio:
+    """
+    09/2018- 04/2021
+    
+    The pioneer of digital trend and the Top-Of-Mind Brand in MarTech
+    and CEM Solutions 
+    """
+    
+    Position = [
+        "Python Senior Developer"
+    ]
+    
+    def tech_stack(self):
+        Languagle = [Python3.5]
+        Databases = [Mongo, Casandra, ElasticSearch]
+        Queues = [Kafka, RabbitMQ]
+        CICD = [OnPremise]
+        Framework = [Flask]
+        
+    def responsible_to(company):
+        return [
+            CDP,
+            Data_Lake
+        ]
+    
+    # NOTE: plz check CV to get detail
+```
+
+And other companies, plz check CV to get detail.  
